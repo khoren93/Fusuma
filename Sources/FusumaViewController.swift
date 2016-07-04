@@ -240,7 +240,7 @@ public final class FusumaViewController: UIViewController {
         return true
     }
     
-    @IBAction func closeButtonPressed(sender: AnyObject) {
+    @IBAction public func closeButtonPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {
             
             self.delegate?.fusumaClosed?()
@@ -262,7 +262,7 @@ public final class FusumaViewController: UIViewController {
         changeMode(Mode.Video)
     }
     
-    @IBAction func doneButtonPressed(sender: AnyObject) {
+    @IBAction public func doneButtonPressed(sender: AnyObject) {
         
         let view = albumView.imageCropView
 
