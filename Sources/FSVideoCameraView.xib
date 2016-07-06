@@ -92,7 +92,7 @@
     </objects>
     <resources>
         <image name="ic_flash_off" width="48" height="48"/>
-        <image name="ic_loop" width="48" height="48"/>
+        <image name="ic_loop" width="18" height="18"/>
         <image name="video_button" width="40" height="40"/>
     </resources>
 </document>
