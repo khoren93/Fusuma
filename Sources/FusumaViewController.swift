@@ -290,7 +290,7 @@ public final class FusumaViewController: UIViewController {
                 let targetSize = CGSize(width: dimension, height: dimension)
                 
                 PHImageManager.defaultManager().requestImageForAsset(self.albumView.phAsset, targetSize: targetSize,
-                contentMode: .AspectFill, options: options) {
+                contentMode: .AspectFit, options: options) {
                     result, info in
                     
                     dispatch_async(dispatch_get_main_queue(), {
