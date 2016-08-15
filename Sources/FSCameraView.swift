@@ -43,7 +43,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
             return
         }
         
-        self.backgroundColor = UIColor.hex("#3f4b5d", alpha: 1.0)
+        self.backgroundColor = UIColor.hex("#FFFFFF", alpha: 1.0)
         
         let bundle = NSBundle(forClass: self.classForCoder)
         

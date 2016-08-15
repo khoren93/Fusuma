@@ -42,7 +42,7 @@ public var fusumaCameraRollTitle = "CAMERA ROLL"
 public var fusumaCameraTitle = "PHOTO"
 public var fusumaVideoTitle = "VIDEO"
 
-public var fusumaTintIcons : Bool = true
+public var fusumaTintIcons : Bool = false
 
 public enum FusumaModeOrder {
     case CameraFirst
@@ -96,7 +96,7 @@ public final class FusumaViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
     
-        self.view.backgroundColor = UIColor.hex("#333f51", alpha: 1.0)
+        self.view.backgroundColor = UIColor.hex("#FFFFFF", alpha: 1.0)
         
         cameraView.delegate = self
         albumView.delegate  = self
@@ -109,11 +109,10 @@ public final class FusumaViewController: UIViewController {
         let bundle = NSBundle(forClass: self.classForCoder)
         
         // Get the custom button images if they're set
-        let albumImage = fusumaAlbumImage != nil ? fusumaAlbumImage : UIImage(named: "ic_insert_photo", inBundle: bundle, compatibleWithTraitCollection: nil)
-        let cameraImage = fusumaCameraImage != nil ? fusumaCameraImage : UIImage(named: "ic_photo_camera", inBundle: bundle, compatibleWithTraitCollection: nil)
+        let albumImage = fusumaAlbumImage != nil ? fusumaAlbumImage : UIImage(named: "new-post-gallery-inactive", inBundle: bundle, compatibleWithTraitCollection: nil)
+        let cameraImage = fusumaCameraImage != nil ? fusumaCameraImage : UIImage(named: "new-post-photo-inactive", inBundle: bundle, compatibleWithTraitCollection: nil)
         
         let videoImage = fusumaVideoImage != nil ? fusumaVideoImage : UIImage(named: "ic_videocam", inBundle: bundle, compatibleWithTraitCollection: nil)
-
         
         let checkImage = fusumaCheckImage != nil ? fusumaCheckImage : UIImage(named: "ic_check", inBundle: bundle, compatibleWithTraitCollection: nil)
         let closeImage = fusumaCloseImage != nil ? fusumaCloseImage : UIImage(named: "ic_close", inBundle: bundle, compatibleWithTraitCollection: nil)
@@ -149,13 +148,13 @@ public final class FusumaViewController: UIViewController {
         } else {
             
             libraryButton.setImage(albumImage, forState: .Normal)
-            libraryButton.setImage(albumImage, forState: .Highlighted)
-            libraryButton.setImage(albumImage, forState: .Selected)
+            libraryButton.setImage(UIImage(named: "new-post-gallery-active"), forState: .Highlighted)
+            libraryButton.setImage(UIImage(named: "new-post-gallery-active"), forState: .Selected)
             libraryButton.tintColor = nil
             
             cameraButton.setImage(cameraImage, forState: .Normal)
-            cameraButton.setImage(cameraImage, forState: .Highlighted)
-            cameraButton.setImage(cameraImage, forState: .Selected)
+            cameraButton.setImage(UIImage(named: "new-post-photo-active"), forState: .Highlighted)
+            cameraButton.setImage(UIImage(named: "new-post-photo-active"), forState: .Selected)
             cameraButton.tintColor = nil
 
             videoButton.setImage(videoImage, forState: .Normal)
@@ -212,10 +211,10 @@ public final class FusumaViewController: UIViewController {
         super.viewDidAppear(animated)
         
         albumView.frame  = CGRect(origin: CGPointZero, size: photoLibraryViewerContainer.frame.size)
-        albumView.addBottomBorder(UIColor.hex("#29323f", alpha: 1.0), width: 0.5)
+        albumView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 0.5)
         albumView.layoutIfNeeded()
         cameraView.frame = CGRect(origin: CGPointZero, size: cameraShotContainer.frame.size)
-        cameraView.addBottomBorder(UIColor.hex("#29323f", alpha: 1.0), width: 0.5)
+        cameraView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 0.5)
         cameraView.layoutIfNeeded()
 
         
@@ -374,13 +373,13 @@ private extension FusumaViewController {
         case .Library:
             titleLabel.text = NSLocalizedString(fusumaCameraRollTitle, comment: fusumaCameraRollTitle)
             doneButton.hidden = false
-            
+            libraryButton.setImage(UIImage(named: "new-post-gallery-active"), forState: .Normal)
             highlightButton(libraryButton)
             self.view.bringSubviewToFront(photoLibraryViewerContainer)
         case .Camera:
             titleLabel.text = NSLocalizedString(fusumaCameraTitle, comment: fusumaCameraTitle)
             doneButton.hidden = true
-            
+            cameraButton.setImage(UIImage(named: "new-post-photo-active"), forState: .Normal)
             highlightButton(cameraButton)
             self.view.bringSubviewToFront(cameraShotContainer)
             cameraView.startCamera()
@@ -399,6 +398,8 @@ private extension FusumaViewController {
     func dishighlightButtons() {
         cameraButton.tintColor  = fusumaBaseTintColor
         libraryButton.tintColor = fusumaBaseTintColor
+        libraryButton.setImage(UIImage(named: "new-post-gallery-inactive"), forState: .Normal)
+        cameraButton.setImage(UIImage(named: "new-post-photo-inactive"), forState: .Normal)
         
         if cameraButton.layer.sublayers?.count > 1 {
             
