@@ -57,7 +57,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
             flipButton.tintColor  = fusumaBaseTintColor
             shotButton.tintColor  = fusumaBaseTintColor
             
-            flashButton.setImage(flashOffImage?.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+            flashButton.setImage(flashOffImage?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
             flipButton.setImage(flipImage?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
             shotButton.setImage(shotImage?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
         } else {

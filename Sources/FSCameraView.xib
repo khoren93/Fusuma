@@ -13,17 +13,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-Sp-jjd">
-                    <rect key="frame" x="0.0" y="64" width="400" height="400"/>
+                    <rect key="frame" x="0.0" y="60" width="400" height="400"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="SZ8-Sp-jjd" secondAttribute="height" multiplier="1:1" id="dsr-FI-2Hq"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUi-qP-Neb">
-                    <rect key="frame" x="0.0" y="464" width="400" height="136"/>
+                    <rect key="frame" x="0.0" y="460" width="400" height="140"/>
                     <subviews>
                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8l-Ld-Oon">
-                            <rect key="frame" x="165" y="33" width="70" height="70"/>
+                            <rect key="frame" x="165" y="35" width="70" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="hsf-ex-pEE"/>
                                 <constraint firstAttribute="width" constant="70" id="rPk-4D-nfg"/>
@@ -34,7 +34,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De1-Cg-kBb">
-                            <rect key="frame" x="312" y="48" width="40" height="40"/>
+                            <rect key="frame" x="312" y="50" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="g0F-ZH-8j6"/>
                                 <constraint firstAttribute="height" constant="40" id="kNB-bN-eie"/>
@@ -46,7 +46,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cf2-eo-TZZ">
-                            <rect key="frame" x="48" y="48" width="40" height="40"/>
+                            <rect key="frame" x="48" y="50" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="Wbh-0c-uHY"/>
                                 <constraint firstAttribute="height" constant="40" id="m8M-Pd-ZIT"/>
@@ -75,7 +75,7 @@
                 <constraint firstAttribute="trailing" secondItem="oUi-qP-Neb" secondAttribute="trailing" id="HM7-dt-RPz"/>
                 <constraint firstItem="oUi-qP-Neb" firstAttribute="top" secondItem="SZ8-Sp-jjd" secondAttribute="bottom" id="KEj-9P-kyb"/>
                 <constraint firstItem="oUi-qP-Neb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Lpo-QC-qmm"/>
-                <constraint firstItem="SZ8-Sp-jjd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="XnG-nk-Wcr"/>
+                <constraint firstItem="SZ8-Sp-jjd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="XnG-nk-Wcr"/>
                 <constraint firstAttribute="trailing" secondItem="SZ8-Sp-jjd" secondAttribute="trailing" id="bms-F5-8H5"/>
                 <constraint firstItem="SZ8-Sp-jjd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x7t-wb-WiH"/>
             </constraints>
@@ -91,7 +91,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_flash_off" width="48" height="48"/>
-        <image name="ic_loop" width="18" height="18"/>
+        <image name="ic_flash_off" width="16" height="20"/>
+        <image name="ic_loop" width="19" height="19"/>
     </resources>
 </document>

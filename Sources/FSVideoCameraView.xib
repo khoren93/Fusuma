@@ -13,17 +13,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-pW-0DW">
-                    <rect key="frame" x="0.0" y="50" width="400" height="400"/>
+                    <rect key="frame" x="0.0" y="60" width="400" height="400"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0hK-pW-0DW" secondAttribute="height" multiplier="1:1" id="EYm-IN-2Mh"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gh-EB-weA">
-                    <rect key="frame" x="0.0" y="450" width="400" height="150"/>
+                    <rect key="frame" x="0.0" y="460" width="400" height="140"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPV-fC-75T">
-                            <rect key="frame" x="15" y="55" width="40" height="40"/>
+                            <rect key="frame" x="48" y="50" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="GcK-Ga-JH3"/>
                                 <constraint firstAttribute="height" constant="40" id="TcK-3W-Kpf"/>
@@ -35,10 +35,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-ro-bt6">
-                            <rect key="frame" x="166" y="41" width="68" height="68"/>
+                            <rect key="frame" x="165" y="35" width="70" height="70"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="68" id="BsM-o7-FiY"/>
-                                <constraint firstAttribute="width" constant="68" id="ggw-fN-Nue"/>
+                                <constraint firstAttribute="height" constant="70" id="BsM-o7-FiY"/>
+                                <constraint firstAttribute="width" constant="70" id="ggw-fN-Nue"/>
                             </constraints>
                             <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                             <state key="normal" image="video_button"/>
@@ -47,7 +47,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-QZ-jPz">
-                            <rect key="frame" x="345" y="55" width="40" height="40"/>
+                            <rect key="frame" x="312" y="50" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="C6F-2l-AWm"/>
                                 <constraint firstAttribute="height" constant="40" id="OR0-eQ-5pN"/>
@@ -63,10 +63,10 @@
                     <constraints>
                         <constraint firstItem="cpy-ro-bt6" firstAttribute="centerX" secondItem="6gh-EB-weA" secondAttribute="centerX" id="CPa-UK-eV1"/>
                         <constraint firstItem="oPV-fC-75T" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="D1d-s9-DBb"/>
-                        <constraint firstItem="oPV-fC-75T" firstAttribute="leading" secondItem="6gh-EB-weA" secondAttribute="leading" constant="15" id="GTv-Vt-Mwd"/>
+                        <constraint firstItem="oPV-fC-75T" firstAttribute="leading" secondItem="6gh-EB-weA" secondAttribute="leading" constant="48" id="GTv-Vt-Mwd"/>
                         <constraint firstItem="cpy-ro-bt6" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="USf-rF-Oy8"/>
                         <constraint firstItem="yHq-QZ-jPz" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="udF-Hg-0iR"/>
-                        <constraint firstAttribute="trailing" secondItem="yHq-QZ-jPz" secondAttribute="trailing" constant="15" id="x4Y-A2-snd"/>
+                        <constraint firstAttribute="trailing" secondItem="yHq-QZ-jPz" secondAttribute="trailing" constant="48" id="x4Y-A2-snd"/>
                     </constraints>
                 </view>
             </subviews>
@@ -75,7 +75,7 @@
                 <constraint firstItem="6gh-EB-weA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8DC-7U-0Ht"/>
                 <constraint firstAttribute="bottom" secondItem="6gh-EB-weA" secondAttribute="bottom" id="IOQ-4M-Rye"/>
                 <constraint firstAttribute="trailing" secondItem="6gh-EB-weA" secondAttribute="trailing" id="Lge-9D-s38"/>
-                <constraint firstItem="0hK-pW-0DW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="ZtF-xP-XL4"/>
+                <constraint firstItem="0hK-pW-0DW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="ZtF-xP-XL4"/>
                 <constraint firstItem="0hK-pW-0DW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="snf-T0-XlH"/>
                 <constraint firstAttribute="trailing" secondItem="0hK-pW-0DW" secondAttribute="trailing" id="syg-FP-hcI"/>
                 <constraint firstItem="6gh-EB-weA" firstAttribute="top" secondItem="0hK-pW-0DW" secondAttribute="bottom" id="t3B-Bo-8p1"/>
@@ -91,8 +91,8 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_flash_off" width="48" height="48"/>
-        <image name="ic_loop" width="18" height="18"/>
+        <image name="ic_flash_off" width="16" height="20"/>
+        <image name="ic_loop" width="19" height="19"/>
         <image name="video_button" width="40" height="40"/>
     </resources>
 </document>
