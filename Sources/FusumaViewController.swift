@@ -58,7 +58,7 @@ public final class FusumaViewController: UIViewController {
         case Video
     }
 
-    public var hasVideo = false
+    public var hasVideo = true
 
     var mode: Mode = Mode.Camera
     public var modeOrder: FusumaModeOrder = .LibraryFirst
