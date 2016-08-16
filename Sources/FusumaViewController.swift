@@ -319,10 +319,10 @@ extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVid
     func cameraShotFinished(image: UIImage) {
         
         delegate?.fusumaImageSelected(image)
-        self.dismissViewControllerAnimated(true, completion: {
-            
-            self.delegate?.fusumaDismissedWithImage?(image)
-        })
+//        self.dismissViewControllerAnimated(true, completion: {
+//            
+//            self.delegate?.fusumaDismissedWithImage?(image)
+//        })
     }
     
     // MARK: FSAlbumViewDelegate
@@ -332,7 +332,7 @@ extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVid
     
     func videoFinished(withFileURL fileURL: NSURL) {
         delegate?.fusumaVideoCompleted(withFileURL: fileURL)
-        self.dismissViewControllerAnimated(true, completion: nil)
+//        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
