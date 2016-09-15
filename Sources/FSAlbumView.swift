@@ -249,7 +249,12 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
                 }
                 
         }
-        
+        if images.count > 0 {
+            
+            changeImage(images[0] as! PHAsset)
+            //collectionView.reloadData()
+            collectionView.selectItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.None)
+        }
         return cell
     }
     
