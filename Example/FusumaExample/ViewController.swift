@@ -39,6 +39,10 @@ class ViewController: UIViewController, FusumaDelegate {
         self.presentViewController(fusuma, animated: true, completion: nil)
         
     }
+   
+    func fusumaDidModeChanged(mode: Mode) {
+    
+    }
     
     // MARK: FusumaDelegate Protocol
     func fusumaImageSelected(image: UIImage) {

@@ -12,6 +12,8 @@ import Photos
 @objc public protocol FusumaDelegate: class {
     
     func fusumaImageSelected(image: UIImage)
+    func fusumaDidModeChanged(mode: Mode)
+    
     optional func fusumaDismissedWithImage(image: UIImage)
     func fusumaVideoCompleted(withFileURL fileURL: NSURL)
     func fusumaCameraRollUnauthorized()
@@ -49,15 +51,15 @@ public enum FusumaModeOrder {
     case LibraryFirst
 }
 
+@objc public enum Mode : NSInteger {
+    case Camera
+    case Library
+    case Video
+}
 //@objc public class FusumaViewController: UIViewController, FSCameraViewDelegate, FSAlbumViewDelegate {
 public final class FusumaViewController: UIViewController {
     
-    enum Mode {
-        case Camera
-        case Library
-        case Video
-    }
-
+    
     public var hasVideo = false
 
     var mode: Mode = Mode.Camera
@@ -249,16 +251,19 @@ public final class FusumaViewController: UIViewController {
     @IBAction func libraryButtonPressed(sender: AnyObject) {
         
         changeMode(Mode.Library)
+        self.delegate?.fusumaDidModeChanged(Mode.Library)
     }
     
     @IBAction func photoButtonPressed(sender: AnyObject) {
     
         changeMode(Mode.Camera)
+        self.delegate?.fusumaDidModeChanged(Mode.Camera)
     }
     
     @IBAction func videoButtonPressed(sender: AnyObject) {
         
         changeMode(Mode.Video)
+        self.delegate?.fusumaDidModeChanged(Mode.Video)
     }
     
     @IBAction public func doneButtonPressed(sender: AnyObject) {
