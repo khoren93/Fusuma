@@ -17,7 +17,7 @@ import Photos
     optional func fusumaDismissedWithImage(image: UIImage)
     func fusumaVideoCompleted(withFileURL fileURL: NSURL)
     func fusumaCameraRollUnauthorized()
-    
+    func fusumaCameraRollDidSelectImage()
     optional func fusumaClosed()
 }
 
@@ -335,6 +335,9 @@ extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVid
         delegate?.fusumaCameraRollUnauthorized()
     }
     
+    public func albumViewCameraRollDidSelectImage() {
+        delegate?.fusumaCameraRollDidSelectImage()
+    }
     func videoFinished(withFileURL fileURL: NSURL) {
         delegate?.fusumaVideoCompleted(withFileURL: fileURL)
 //        self.dismissViewControllerAnimated(true, completion: nil)
@@ -389,7 +392,6 @@ private extension FusumaViewController {
         case .Video:
             titleLabel.text = fusumaVideoTitle
             doneButton.hidden = true
-            
             highlightButton(videoButton)
             self.view.bringSubviewToFront(videoShotContainer)
             videoView.startCamera()

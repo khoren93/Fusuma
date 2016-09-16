@@ -12,6 +12,7 @@ import Photos
 @objc public protocol FSAlbumViewDelegate: class {
     
     func albumViewCameraRollUnauthorized()
+    func albumViewCameraRollDidSelectImage()
 }
 
 final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, PHPhotoLibraryChangeObserver, UIGestureRecognizerDelegate {
@@ -278,6 +279,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
         
         changeImage(images[indexPath.row] as! PHAsset)
         
+        self.delegate?.albumViewCameraRollDidSelectImage()
         imageCropView.changeScrollable(true)
         
         imageCropViewConstraintTop.constant = imageCropViewOriginalConstraintTop

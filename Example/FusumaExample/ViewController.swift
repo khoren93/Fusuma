@@ -39,16 +39,20 @@ class ViewController: UIViewController, FusumaDelegate {
         self.presentViewController(fusuma, animated: true, completion: nil)
         
     }
-   
-    func fusumaDidModeChanged(mode: Mode) {
-    
-    }
     
     // MARK: FusumaDelegate Protocol
     func fusumaImageSelected(image: UIImage) {
         
         print("Image selected")
         imageView.image = image
+    }
+    
+    func fusumaDidModeChanged(mode: Mode) {
+        
+    }
+    
+    func fusumaCameraRollDidSelectImage() {
+    
     }
     
     func fusumaVideoCompleted(withFileURL fileURL: NSURL) {
