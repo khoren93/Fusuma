@@ -41,7 +41,7 @@ class ViewController: UIViewController, FusumaDelegate {
     }
     
     // MARK: FusumaDelegate Protocol
-    func fusumaImageSelected(image: UIImage) {
+    func fusumaImageSelected(image: UIImage?) {
         
         print("Image selected")
         imageView.image = image
