@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,17 +14,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-pW-0DW">
-                    <rect key="frame" x="0.0" y="60" width="400" height="400"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0hK-pW-0DW" secondAttribute="height" multiplier="1:1" id="EYm-IN-2Mh"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gh-EB-weA">
-                    <rect key="frame" x="0.0" y="460" width="400" height="140"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPV-fC-75T">
-                            <rect key="frame" x="48" y="50" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="GcK-Ga-JH3"/>
                                 <constraint firstAttribute="height" constant="40" id="TcK-3W-Kpf"/>
@@ -35,7 +33,6 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-ro-bt6">
-                            <rect key="frame" x="165" y="35" width="70" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="BsM-o7-FiY"/>
                                 <constraint firstAttribute="width" constant="70" id="ggw-fN-Nue"/>
@@ -47,7 +44,6 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-QZ-jPz">
-                            <rect key="frame" x="312" y="50" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="C6F-2l-AWm"/>
                                 <constraint firstAttribute="height" constant="40" id="OR0-eQ-5pN"/>
@@ -59,7 +55,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="cpy-ro-bt6" firstAttribute="centerX" secondItem="6gh-EB-weA" secondAttribute="centerX" id="CPa-UK-eV1"/>
                         <constraint firstItem="oPV-fC-75T" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="D1d-s9-DBb"/>
@@ -70,7 +66,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="6gh-EB-weA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8DC-7U-0Ht"/>
                 <constraint firstAttribute="bottom" secondItem="6gh-EB-weA" secondAttribute="bottom" id="IOQ-4M-Rye"/>
@@ -93,6 +89,6 @@
     <resources>
         <image name="ic_flash_off" width="16" height="20"/>
         <image name="ic_loop" width="19" height="19"/>
-        <image name="video_button" width="40" height="40"/>
+        <image name="video_button" width="70" height="70"/>
     </resources>
 </document>

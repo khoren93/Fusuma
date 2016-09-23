@@ -73,11 +73,13 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
         imageCropViewContainer.layer.shadowColor   = UIColor.black.cgColor
         imageCropViewContainer.layer.shadowRadius  = 30.0
         imageCropViewContainer.layer.shadowOpacity = 0.9
-        imageCropViewContainer.layer.shadowOffset  = CGSizeZero
+
+        imageCropViewContainer.layer.shadowOffset  = CGSize.zero
         self.imageCropView.backgroundColor = UIColor.hex("#FFFFFF", alpha: 1.0)
-        collectionView.registerNib(UINib(nibName: "FSAlbumViewCell", bundle: NSBundle(forClass: self.classForCoder)), forCellWithReuseIdentifier: "FSAlbumViewCell")
+
+        collectionView.register(UINib(nibName: "FSAlbumViewCell", bundle: Bundle(for: self.classForCoder)), forCellWithReuseIdentifier: "FSAlbumViewCell")
 		collectionView.backgroundColor = UIColor.hex("#FFFFFF", alpha: 1.0)
-		
+
         // Never load photos Unless the user allows to access to photo album
         checkPhotoAuth()
         

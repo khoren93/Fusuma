@@ -117,10 +117,10 @@ final class FSVideoCameraView: UIView {
             flashButton.tintColor = fusumaBaseTintColor
             flipButton.tintColor  = fusumaBaseTintColor
             shotButton.tintColor  = fusumaBaseTintColor
-            
-            flashButton.setImage(flashOffImage?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
-            flipButton.setImage(flipImage?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
-            shotButton.setImage(videoStartImage?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
+
+            flashButton.setImage(flashOffImage?.withRenderingMode(.alwaysOriginal), for: UIControlState())
+            flipButton.setImage(flipImage?.withRenderingMode(.alwaysOriginal), for: UIControlState())
+            shotButton.setImage(videoStartImage?.withRenderingMode(.alwaysOriginal), for: UIControlState())
         } else {
             flashButton.setImage(flashOffImage, for: UIControlState())
             flipButton.setImage(flipImage, for: UIControlState())

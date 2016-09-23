@@ -48,20 +48,20 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
         self.backgroundColor = UIColor.hex("#FFFFFF", alpha: 1.0)
         
         let bundle = Bundle(for: self.classForCoder)
-        
-        flashOnImage = fusumaFlashOnImage != nil ? fusumaFlashOnImage : UIImage(named: "ic_flash_on", inBundle: bundle, compatibleWithTraitCollection: nil)
-        flashOffImage = fusumaFlashOffImage != nil ? fusumaFlashOffImage : UIImage(named: "ic_flash_off", inBundle: bundle, compatibleWithTraitCollection: nil)
-        let flipImage = fusumaFlipImage != nil ? fusumaFlipImage : UIImage(named: "ic_loop", inBundle: bundle, compatibleWithTraitCollection: nil)
-        let shotImage = fusumaShotImage != nil ? fusumaShotImage : UIImage(named: "shutter_button", inBundle: bundle, compatibleWithTraitCollection: nil)
+
+        flashOnImage = fusumaFlashOnImage != nil ? fusumaFlashOnImage : UIImage(named: "ic_flash_on", in: bundle, compatibleWith: nil)
+        flashOffImage = fusumaFlashOffImage != nil ? fusumaFlashOffImage : UIImage(named: "ic_flash_off", in: bundle, compatibleWith: nil)
+        let flipImage = fusumaFlipImage != nil ? fusumaFlipImage : UIImage(named: "ic_loop", in: bundle, compatibleWith: nil)
+        let shotImage = fusumaShotImage != nil ? fusumaShotImage : UIImage(named: "shutter_button", in: bundle, compatibleWith: nil)
         
         if(fusumaTintIcons) {
             flashButton.tintColor = fusumaBaseTintColor
             flipButton.tintColor  = fusumaBaseTintColor
             shotButton.tintColor  = fusumaBaseTintColor
             
-            flashButton.setImage(flashOffImage?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
-            flipButton.setImage(flipImage?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
-            shotButton.setImage(shotImage?.imageWithRenderingMode(.AlwaysOriginal), forState: .Normal)
+            flashButton.setImage(flashOffImage?.withRenderingMode(.alwaysOriginal), for: UIControlState())
+            flipButton.setImage(flipImage?.withRenderingMode(.alwaysOriginal), for: UIControlState())
+            shotButton.setImage(shotImage?.withRenderingMode(.alwaysOriginal), for: UIControlState())
         } else {
             flashButton.setImage(flashOffImage, for: UIControlState())
             flipButton.setImage(flipImage, for: UIControlState())

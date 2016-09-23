@@ -55,7 +55,7 @@ class ViewController: UIViewController, FusumaDelegate {
     
     }
     
-    func fusumaVideoCompleted(withFileURL fileURL: NSURL) {
+    func fusumaVideoCompleted(withFileURL fileURL: URL) {
         print("video completed and output to file: \(fileURL)")
         self.fileUrlLabel.text = "file output to: \(fileURL.absoluteString)"
     }
