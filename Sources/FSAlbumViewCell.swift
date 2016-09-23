@@ -23,10 +23,10 @@ final class FSAlbumViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selected = false
+        self.isSelected = false
     }
     
-    override var selected : Bool {
+    override var isSelected : Bool {
         didSet {
             self.layer.borderColor = selected ? UIColor.hex("#47d081", alpha: 1.0).CGColor : UIColor.clearColor().CGColor
             self.layer.borderWidth = selected ? 2 : 0

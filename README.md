@@ -29,9 +29,9 @@ Those features are available just with a few lines of code!
 ## Installation
 
 Drop in the Classes folder to your Xcode project.  
-You can also use cocoapods or Carthage.
+You can also use CocoaPods or Carthage.
 
-#### Using [cocoapods](http://cocoapods.org/)
+#### Using [CocoaPods](http://cocoapods.org/)
 
 Add `pod 'Fusuma'` to your `Podfile` and run `pod install`. Also add `use_frameworks!` to the `Podfile`.
 
@@ -99,6 +99,10 @@ You can deselect image crop mode with:
 ```Swift
 fusumaCropImage:Bool // default is true for cropping the image 
 ```
+
+## Fusuma for Xamarin
+Cheesebaron developed Chafu for Xamarin.  
+https://github.com/Cheesebaron/Chafu
 
 ## Author
 ytakzk  
