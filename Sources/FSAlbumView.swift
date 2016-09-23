@@ -73,10 +73,8 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
         imageCropViewContainer.layer.shadowColor   = UIColor.black.cgColor
         imageCropViewContainer.layer.shadowRadius  = 30.0
         imageCropViewContainer.layer.shadowOpacity = 0.9
-
         imageCropViewContainer.layer.shadowOffset  = CGSize.zero
         self.imageCropView.backgroundColor = UIColor.hex("#FFFFFF", alpha: 1.0)
-
         collectionView.register(UINib(nibName: "FSAlbumViewCell", bundle: Bundle(for: self.classForCoder)), forCellWithReuseIdentifier: "FSAlbumViewCell")
 		collectionView.backgroundColor = UIColor.hex("#FFFFFF", alpha: 1.0)
 
@@ -252,12 +250,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
                 }
                 
         }
-//        if images.count > 0 {
-//            
-//            changeImage(images[0] as! PHAsset)
-//            //collectionView.reloadData()
-//            collectionView.selectItemAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.None)
-//        }
+
         return cell
     }
     

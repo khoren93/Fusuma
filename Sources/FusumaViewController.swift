@@ -336,7 +336,7 @@ public final class FusumaViewController: UIViewController {
                 let targetSize = CGSize(width: dimension, height: dimension)
 
                 PHImageManager.default().requestImage(for: self.albumView.phAsset, targetSize: targetSize,
-                contentMode: .aspectFit, options: options) {
+                contentMode: .aspectFill, options: options) {
                     result, info in
                     
                     DispatchQueue.main.async(execute: {
@@ -450,8 +450,7 @@ private extension FusumaViewController {
     func dishighlightButtons() {
         cameraButton.tintColor  = fusumaBaseTintColor
         libraryButton.tintColor = fusumaBaseTintColor
-        
-        
+
         if cameraButton.layer.sublayers?.count > 1 {
             
             for layer in cameraButton.layer.sublayers! {

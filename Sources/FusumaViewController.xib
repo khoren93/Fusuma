@@ -26,16 +26,20 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIt-Tt-mDz" userLabel="Video View">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RIt-Tt-mDz" userLabel="Video View">
+                    <frame key="frameInset" width="600" height="555"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-FU-LPW" userLabel="Camera View">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CFH-FU-LPW" userLabel="Camera View">
+                    <frame key="frameInset" width="600" height="555"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Pk-29-mUG" userLabel="Library View">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Pk-29-mUG" userLabel="Library View">
+                    <frame key="frameInset" width="600" height="555"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ba-kc-jlJ" userLabel="Menu View">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ba-kc-jlJ" userLabel="Menu View">
+                    <frame key="frameInset" width="600" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx0-Tt-oZs">
                             <constraints>
@@ -50,7 +54,8 @@
                                 <action selector="closeButtonPressed:" destination="-1" eventType="touchUpInside" id="rtM-1A-Fdg"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iB-Jh-kTh">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iB-Jh-kTh">
+                            <frame key="frameInset" minX="552" minY="6" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="4aS-BG-rpd"/>
                                 <constraint firstAttribute="width" constant="40" id="NE8-9R-uXl"/>
@@ -63,7 +68,8 @@
                                 <action selector="doneButtonPressed:" destination="-1" eventType="touchUpInside" id="Ym5-Qc-exH"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAMERA ROLL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxN-Q8-Lgd">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CAMERA ROLL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxN-Q8-Lgd">
+                            <frame key="frameInset" minX="56" minY="17" width="488" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="JDW-4S-H17"/>
                             </constraints>
@@ -75,7 +81,7 @@
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="Dx0-Tt-oZs" firstAttribute="leading" secondItem="8ba-kc-jlJ" secondAttribute="leading" constant="8" id="51K-wb-k3T"/>
-                        <constraint firstAttribute="height" constant="64" id="5ZE-04-Fz1"/>
+                        <constraint firstAttribute="height" constant="50" id="5ZE-04-Fz1"/>
                         <constraint firstAttribute="trailing" secondItem="5iB-Jh-kTh" secondAttribute="trailing" constant="8" id="CsQ-ni-3OY"/>
                         <constraint firstItem="cxN-Q8-Lgd" firstAttribute="leading" secondItem="Dx0-Tt-oZs" secondAttribute="trailing" constant="8" id="INH-fO-tBz"/>
                         <constraint firstItem="5iB-Jh-kTh" firstAttribute="leading" secondItem="cxN-Q8-Lgd" secondAttribute="trailing" constant="8" id="InH-Sz-8gz"/>
@@ -84,37 +90,43 @@
                         <constraint firstItem="Dx0-Tt-oZs" firstAttribute="top" secondItem="8ba-kc-jlJ" secondAttribute="top" constant="8" id="phx-7N-5Ks"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ew-Zi-63G">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cph-QM-jcJ">
+                    <frame key="frameInset" minY="555" width="200" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="ef6-hG-yx4"/>
+                    </constraints>
+                    <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                    <state key="normal" image="ic_insert_photo"/>
+                    <state key="selected" image="ic_insert_photo"/>
+                    <state key="highlighted" image="ic_insert_photo"/>
+                    <connections>
+                        <action selector="libraryButtonPressed:" destination="-1" eventType="touchUpInside" id="4H9-TH-qO3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ew-Zi-63G">
+                    <frame key="frameInset" minX="400" minY="555" width="200" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="vif-4h-eUh"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="2" minY="3" maxX="2" maxY="2"/>
+                    <state key="normal" image="ic_videocam"/>
                     <state key="selected" image="ic_photo_camera"/>
                     <state key="highlighted" image="ic_photo_camera"/>
                     <connections>
                         <action selector="videoButtonPressed:" destination="-1" eventType="touchUpInside" id="jZa-kI-xDJ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCN-QB-mCu">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCN-QB-mCu">
+                    <frame key="frameInset" minX="200" minY="555" width="200" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="7VV-4q-BRr"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="2" minY="3" maxX="2" maxY="2"/>
+                    <state key="normal" image="ic_photo_camera"/>
                     <state key="selected" image="ic_photo_camera"/>
                     <state key="highlighted" image="ic_photo_camera"/>
                     <connections>
                         <action selector="photoButtonPressed:" destination="-1" eventType="touchUpInside" id="798-LR-edY"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cph-QM-jcJ">
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="ef6-hG-yx4"/>
-                    </constraints>
-                    <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
-                    <state key="selected" image="ic_insert_photo"/>
-                    <state key="highlighted" image="ic_insert_photo"/>
-                    <connections>
-                        <action selector="libraryButtonPressed:" destination="-1" eventType="touchUpInside" id="4H9-TH-qO3"/>
                     </connections>
                 </button>
             </subviews>
@@ -122,7 +134,6 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="8ba-kc-jlJ" secondAttribute="trailing" id="00c-gY-uy6"/>
                 <constraint firstItem="1Pk-29-mUG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0rm-S1-9o9"/>
-                <constraint firstAttribute="trailing" secondItem="1Pk-29-mUG" secondAttribute="trailing" id="7Jk-xO-PHH"/>
                 <constraint firstItem="sCN-QB-mCu" firstAttribute="leading" secondItem="cph-QM-jcJ" secondAttribute="trailing" id="8Df-A3-2bv"/>
                 <constraint firstItem="8ba-kc-jlJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ADX-qy-sfu"/>
                 <constraint firstAttribute="bottom" secondItem="sCN-QB-mCu" secondAttribute="bottom" id="Eol-81-9UT"/>
@@ -133,6 +144,7 @@
                 <constraint firstItem="sCN-QB-mCu" firstAttribute="width" secondItem="cph-QM-jcJ" secondAttribute="width" id="ZJg-S4-hJ4"/>
                 <constraint firstItem="RIt-Tt-mDz" firstAttribute="leading" secondItem="1Pk-29-mUG" secondAttribute="leading" id="Zh6-JC-yZB"/>
                 <constraint firstAttribute="trailing" secondItem="8ew-Zi-63G" secondAttribute="trailing" id="aK8-hD-s6X"/>
+                <constraint firstAttribute="trailing" secondItem="1Pk-29-mUG" secondAttribute="trailing" id="b0C-4x-heo"/>
                 <constraint firstItem="sCN-QB-mCu" firstAttribute="width" secondItem="8ew-Zi-63G" secondAttribute="width" id="ctQ-Ka-mGj"/>
                 <constraint firstItem="CFH-FU-LPW" firstAttribute="trailing" secondItem="1Pk-29-mUG" secondAttribute="trailing" id="dTI-0B-myd"/>
                 <constraint firstItem="RIt-Tt-mDz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gTV-NE-IMv"/>
@@ -146,13 +158,13 @@
                 <constraint firstItem="CFH-FU-LPW" firstAttribute="bottom" secondItem="1Pk-29-mUG" secondAttribute="bottom" id="zaw-12-NQW"/>
                 <constraint firstItem="RIt-Tt-mDz" firstAttribute="bottom" secondItem="1Pk-29-mUG" secondAttribute="bottom" id="zev-R6-uK3"/>
             </constraints>
-            <point key="canvasLocation" x="731" y="435"/>
         </view>
     </objects>
     <resources>
         <image name="ic_check" width="48" height="48"/>
         <image name="ic_close" width="48" height="48"/>
-        <image name="ic_insert_photo" width="20" height="20"/>
-        <image name="ic_photo_camera" width="20" height="20"/>
+        <image name="ic_insert_photo" width="36" height="36"/>
+        <image name="ic_photo_camera" width="36" height="36"/>
+        <image name="ic_videocam" width="36" height="36"/>
     </resources>
 </document>
