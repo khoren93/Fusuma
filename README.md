@@ -28,6 +28,8 @@ Those features are available just with a few lines of code!
 
 ## Installation
 
+#### This branch supports Swift2.3. Go to the master branch if you use Swift3.
+
 Drop in the Classes folder to your Xcode project.  
 You can also use CocoaPods or Carthage.
 
@@ -37,7 +39,7 @@ Add `pod 'Fusuma'` to your `Podfile` and run `pod install`. Also add `use_framew
 
 ```
 use_frameworks!
-pod 'Fusuma'
+pod 'Fusuma', '0.6.0'
 ```
 
 #### Using [Carthage](https://github.com/Carthage/Carthage)
@@ -45,7 +47,7 @@ pod 'Fusuma'
 Add `github "ytakzk/Fusuma"` to your `Cartfile` and run `carthage update`. If unfamiliar with Carthage then checkout their [Getting Started section](https://github.com/Carthage/Carthage#getting-started).
 
 ```
-github "ytakzk/Fusuma"
+github "ytakzk/Fusuma" "swift2.3"
 ```
 
 ## Fusuma Usage
