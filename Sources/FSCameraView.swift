@@ -195,7 +195,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                 
                 let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
                 
-                if let image = UIImage(data: data!), let delegate = self.delegate {
+                if let image = UIImage(data: data!), let cgImage = image.cgImage, let delegate = self.delegate {
                     
                     // Image size
                     var iw: CGFloat
@@ -217,7 +217,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
                     // The center coordinate along Y axis
                     let rcy = ih * 0.5
 
-                    let imageRef = image.cgImage?.cropping(to: CGRect(x: rcy-iw*0.5, y: 0 , width: iw, height: iw))
+                    let imageRef = cgImage.cropping(to: CGRect(x: rcy-iw*0.5, y: 0 , width: iw, height: iw))
                     
                     
                                         
