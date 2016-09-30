@@ -500,3 +500,35 @@ private extension FusumaViewController {
         button.addBottomBorder(fusumaTintColor, width: 3)
     }
 }
+
+
+public extension FusumaViewController {
+
+    public func setFusumaColors(baseTintColor: UIColor, tintColor: UIColor, backgroundColor: UIColor) {
+        fusumaBaseTintColor = baseTintColor
+        fusumaTintColor = tintColor
+        fusumaBackgroundColor = backgroundColor
+    }
+
+    public func setFusumaTitles(cameraRollTitletitle: String, cameraTitle: String, videoTitle: String) {
+        fusumaCameraRollTitle = cameraRollTitletitle
+        fusumaCameraTitle = cameraTitle
+        fusumaVideoTitle = videoTitle
+    }
+
+    public func setFusumaPhotoIcons(albumIcon: UIImage, cameraIcon: UIImage, videoIcon: UIImage, checkIcon: UIImage, closeIcon: UIImage, flashOnImage: UIImage, flashOffImage: UIImage, flipImage: UIImage, shotImage: UIImage, videoStartImage: UIImage, videoStopImage: UIImage) {
+        fusumaAlbumImage = albumIcon
+        fusumaCameraImage = cameraIcon
+        fusumaVideoImage = videoIcon
+        fusumaCheckImage = checkIcon
+        fusumaCloseImage = closeIcon
+        fusumaFlashOnImage = flashOnImage
+        fusumaFlashOffImage = flashOffImage
+        fusumaFlipImage = flipImage
+        fusumaShotImage = shotImage
+        fusumaVideoStartImage = videoStartImage
+        fusumaVideoStopImage = videoStopImage
+    }
+
+}
+
