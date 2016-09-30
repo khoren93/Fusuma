@@ -276,7 +276,7 @@ public final class FusumaViewController: UIViewController {
 
     override public var prefersStatusBarHidden : Bool {
         
-        return true
+        return false
     }
     
     @IBAction public func closeButtonPressed(_ sender: UIButton) {
