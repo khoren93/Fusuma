@@ -132,7 +132,7 @@ public final class FusumaViewController: UIViewController {
         videoView.delegate = self
         
         menuView.backgroundColor = fusumaBackgroundColor
-//        menuView.addBottomBorder(UIColor.black, width: 1.0)
+        menuView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 1.0)
         menuView.isHidden = false
 
         let bundle = Bundle(for: self.classForCoder)
@@ -452,6 +452,7 @@ private extension FusumaViewController {
     func dishighlightButtons() {
         cameraButton.tintColor  = fusumaBaseTintColor
         libraryButton.tintColor = fusumaBaseTintColor
+        cameraButton.tintColor = fusumaBaseTintColor
 
         if cameraButton.layer.sublayers?.count > 1 {
             
