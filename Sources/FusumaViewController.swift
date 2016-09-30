@@ -452,7 +452,6 @@ private extension FusumaViewController {
     func dishighlightButtons() {
         cameraButton.tintColor  = fusumaBaseTintColor
         libraryButton.tintColor = fusumaBaseTintColor
-        cameraButton.tintColor = fusumaBaseTintColor
 
         if cameraButton.layer.sublayers?.count > 1 {
             
