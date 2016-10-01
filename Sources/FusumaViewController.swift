@@ -264,6 +264,7 @@ public final class FusumaViewController: UIViewController {
         if hasVideo {
 
             videoView.frame = CGRect(origin: CGPoint.zero, size: videoShotContainer.frame.size)
+            videoView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 0.5)
             videoView.layoutIfNeeded()
             videoView.initialize()
         }
