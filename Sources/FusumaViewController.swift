@@ -170,12 +170,12 @@ public final class FusumaViewController: UIViewController {
             closeButton.setImage(closeImage?.withRenderingMode(.alwaysTemplate), for: .normal)
             closeButton.setImage(closeImage?.withRenderingMode(.alwaysTemplate), for: .highlighted)
             closeButton.setImage(closeImage?.withRenderingMode(.alwaysTemplate), for: .selected)
-            closeButton.tintColor = fusumaBaseTintColor
+            closeButton.tintColor = fusumaTintColor
 
             doneButton.setImage(checkImage?.withRenderingMode(.alwaysTemplate), for: .normal)
             doneButton.setImage(closeImage?.withRenderingMode(.alwaysTemplate), for: .highlighted)
             doneButton.setImage(closeImage?.withRenderingMode(.alwaysTemplate), for: .selected)
-            doneButton.tintColor = fusumaBaseTintColor
+            doneButton.tintColor = fusumaTintColor
             
         } else {
             
@@ -208,7 +208,7 @@ public final class FusumaViewController: UIViewController {
         cameraShotContainer.addSubview(cameraView)
         videoShotContainer.addSubview(videoView)
         
-        titleLabel.textColor = fusumaBaseTintColor
+        titleLabel.textColor = UIColor.hex("#FFFFFF", alpha: 1.0)
         
         //        if modeOrder != .LibraryFirst {
         //            libraryFirstConstraints.forEach { $0.priority = 250 }
@@ -244,7 +244,7 @@ public final class FusumaViewController: UIViewController {
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
     }
 
     override public func viewDidAppear(_ animated: Bool) {
