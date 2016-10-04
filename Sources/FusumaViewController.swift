@@ -243,18 +243,17 @@ public final class FusumaViewController: UIViewController {
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+
     }
 
     override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         albumView.frame  = CGRect(origin: CGPoint.zero, size: photoLibraryViewerContainer.frame.size)
-        albumView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 0.5)
         albumView.layoutIfNeeded()
         cameraView.frame = CGRect(origin: CGPoint.zero, size: cameraShotContainer.frame.size)
-        cameraView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 0.5)
         cameraView.layoutIfNeeded()
-        
+
         
         albumView.initialize()
         cameraView.initialize()
@@ -262,9 +261,17 @@ public final class FusumaViewController: UIViewController {
         if hasVideo {
 
             videoView.frame = CGRect(origin: CGPoint.zero, size: videoShotContainer.frame.size)
-            videoView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 0.5)
             videoView.layoutIfNeeded()
             videoView.initialize()
+        }
+
+//        changeMode(Mode.library)
+
+        albumView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 0.5)
+        cameraView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 0.5)
+
+        if hasVideo {
+            videoView.addBottomBorder(UIColor.hex("#e2e2e2", alpha: 1.0), width: 0.5)
         }
     }
     
