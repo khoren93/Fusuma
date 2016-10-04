@@ -140,10 +140,8 @@ public final class FusumaViewController: UIViewController {
         // Get the custom button images if they're set
         let albumImage = fusumaAlbumImage != nil ? fusumaAlbumImage : UIImage(named: "ic_insert_photo", in: bundle, compatibleWith: nil)
         let cameraImage = fusumaCameraImage != nil ? fusumaCameraImage : UIImage(named: "ic_photo_camera", in: bundle, compatibleWith: nil)
-        
         let videoImage = fusumaVideoImage != nil ? fusumaVideoImage : UIImage(named: "ic_videocam", in: bundle, compatibleWith: nil)
 
-        
         let checkImage = fusumaCheckImage != nil ? fusumaCheckImage : UIImage(named: "ic_check", in: bundle, compatibleWith: nil)
         let closeImage = fusumaCloseImage != nil ? fusumaCloseImage : UIImage(named: "ic_close", in: bundle, compatibleWith: nil)
         
@@ -161,9 +159,9 @@ public final class FusumaViewController: UIViewController {
             cameraButton.tintColor  = fusumaBaseTintColor
             cameraButton.adjustsImageWhenHighlighted  = false
 
-            videoButton.setImage(videoImage, for: UIControlState())
-            videoButton.setImage(videoImage, for: .highlighted)
-            videoButton.setImage(videoImage, for: .selected)
+            videoButton.setImage(videoImage?.withRenderingMode(.alwaysTemplate), for: .normal)
+            videoButton.setImage(videoImage?.withRenderingMode(.alwaysTemplate), for: .highlighted)
+            videoButton.setImage(videoImage?.withRenderingMode(.alwaysTemplate), for: .selected)
             videoButton.tintColor  = fusumaBaseTintColor
             videoButton.adjustsImageWhenHighlighted = false
 
@@ -208,7 +206,7 @@ public final class FusumaViewController: UIViewController {
         cameraShotContainer.addSubview(cameraView)
         videoShotContainer.addSubview(videoView)
         
-        titleLabel.textColor = UIColor.hex("#FFFFFF", alpha: 1.0)
+        titleLabel.textColor = UIColor.hex("#000000", alpha: 1.0)
         
         //        if modeOrder != .LibraryFirst {
         //            libraryFirstConstraints.forEach { $0.priority = 250 }
