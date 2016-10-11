@@ -76,7 +76,7 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
         
         for device in AVCaptureDevice.devices() {
             
-            if let device = device as? AVCaptureDevice , device.position == AVCaptureDevicePosition.back {
+            if let device = device as? AVCaptureDevice , device.position == AVCaptureDevicePosition.front {
                 
                 self.device = device
                 
