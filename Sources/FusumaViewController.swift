@@ -542,5 +542,8 @@ public extension FusumaViewController {
         fusumaVideoStopImage = videoStopImage
     }
 
+    public func setMode(mode: Mode) {
+        changeMode(mode)
+    }
 }
 
