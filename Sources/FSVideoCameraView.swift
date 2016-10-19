@@ -92,7 +92,17 @@ final class FSVideoCameraView: UIView {
                 let videoLayer = AVCaptureVideoPreviewLayer(session: session)
                 videoLayer?.frame = self.previewViewContainer.bounds
                 videoLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-                
+
+                for device in AVCaptureDevice.devices(withMediaType: AVMediaTypeAudio) {
+                    let device = device as? AVCaptureDevice
+                    let audioInput = try! AVCaptureDeviceInput(device: device)
+                    session.addInput(audioInput)
+                }
+
+                if session.canSetSessionPreset(AVCaptureSessionPreset640x480) {
+                    session.sessionPreset = AVCaptureSessionPreset640x480
+                }
+
                 self.previewViewContainer.layer.addSublayer(videoLayer!)
                 
                 session.startRunning()
@@ -233,6 +243,16 @@ final class FSVideoCameraView: UIView {
                         session.addInput(videoInput)
                         
                     }
+                }
+
+                for device in AVCaptureDevice.devices(withMediaType: AVMediaTypeAudio) {
+                    let device = device as? AVCaptureDevice
+                    let audioInput = try! AVCaptureDeviceInput(device: device)
+                    session.addInput(audioInput)
+                }
+
+                if session.canSetSessionPreset(AVCaptureSessionPreset640x480) {
+                    session.sessionPreset = AVCaptureSessionPreset640x480
                 }
                 
             }
