@@ -448,9 +448,10 @@ private extension FusumaViewController {
             
             highlightButton(videoButton)
             self.view.bringSubview(toFront: videoShotContainer)
+            
             videoView.startCamera()
         }
-        doneButton.isHidden = !hasGalleryPermission
+        //doneButton.isHidden = !hasGalleryPermission
         self.view.bringSubview(toFront: menuView)
     }
     
