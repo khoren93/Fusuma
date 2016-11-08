@@ -19,6 +19,7 @@ final class FSVideoCameraView: UIView {
     @IBOutlet weak var shotButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var flipButton: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
     
     weak var delegate: FSVideoCameraViewDelegate? = nil
     
@@ -32,7 +33,9 @@ final class FSVideoCameraView: UIView {
     var flashOnImage: UIImage?
     var videoStartImage: UIImage?
     var videoStopImage: UIImage?
-
+    
+    var timer: Timer = Timer.scheduledTimer(timeInterval:1.0, target: self, selector:#selector(timerTick), userInfo: nil, repeats: true)
+    var timerSeconds: NSInteger = -1
     
     fileprivate var isRecording = false
     
@@ -49,6 +52,9 @@ final class FSVideoCameraView: UIView {
         }
         
         self.backgroundColor = fusumaBackgroundColor
+        
+        self.timerLabel.textColor = UIColor.white
+        self.timerLabel.isHidden = true
         
         self.isHidden = false
         
@@ -194,11 +200,13 @@ final class FSVideoCameraView: UIView {
             }
             self.flipButton.isEnabled = false
             self.flashButton.isEnabled = false
+            self.timerLabel.isHidden = false
             videoOutput.startRecording(toOutputFileURL: outputURL, recordingDelegate: self)
         } else {
             videoOutput.stopRecording()
             self.flipButton.isEnabled = true
             self.flashButton.isEnabled = true
+            self.timerLabel.isHidden = true
         }
         return
     }
@@ -274,18 +282,38 @@ final class FSVideoCameraView: UIView {
         }
         
     }
-
+    
+    func startTimer() {
+        
+        self.timer.fire()
+    }
+    
+    func stopTimer() {
+        
+        self.timer.invalidate()
+    }
+    
+    func timerTick() {
+        
+        self.timerSeconds += 1
+        self.timerLabel.text = self.timerSeconds.description
+        
+    }
 }
+
 
 extension FSVideoCameraView: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
         print("started recording to: \(fileURL)")
+        self.startTimer()
     }
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         print("finished recording to: \(outputFileURL)")
+
         self.delegate?.videoFinished(withFileURL: outputFileURL)
+        self.stopTimer()
     }
     
 }
