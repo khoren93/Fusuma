@@ -54,13 +54,20 @@
                                 <action selector="flashButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="nou-7D-EDR"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnL-8F-y2I">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="EnL-8F-y2I" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="AiX-TT-PqM"/>
                         <constraint firstItem="cpy-ro-bt6" firstAttribute="centerX" secondItem="6gh-EB-weA" secondAttribute="centerX" id="CPa-UK-eV1"/>
                         <constraint firstItem="oPV-fC-75T" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="D1d-s9-DBb"/>
                         <constraint firstItem="oPV-fC-75T" firstAttribute="leading" secondItem="6gh-EB-weA" secondAttribute="leading" constant="48" id="GTv-Vt-Mwd"/>
                         <constraint firstItem="cpy-ro-bt6" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="USf-rF-Oy8"/>
+                        <constraint firstItem="EnL-8F-y2I" firstAttribute="centerX" secondItem="6gh-EB-weA" secondAttribute="centerX" id="gvV-KB-xyp"/>
                         <constraint firstItem="yHq-QZ-jPz" firstAttribute="centerY" secondItem="6gh-EB-weA" secondAttribute="centerY" id="udF-Hg-0iR"/>
                         <constraint firstAttribute="trailing" secondItem="yHq-QZ-jPz" secondAttribute="trailing" constant="48" id="x4Y-A2-snd"/>
                     </constraints>
@@ -82,6 +89,7 @@
                 <outlet property="flipButton" destination="oPV-fC-75T" id="J96-fz-NnG"/>
                 <outlet property="previewViewContainer" destination="0hK-pW-0DW" id="8bh-3S-jSb"/>
                 <outlet property="shotButton" destination="cpy-ro-bt6" id="SbF-vE-c2o"/>
+                <outlet property="timerLabel" destination="EnL-8F-y2I" id="ntS-GZ-Hcg"/>
             </connections>
             <point key="canvasLocation" x="519" y="448"/>
         </view>

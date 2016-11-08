@@ -19,6 +19,7 @@ final class FSVideoCameraView: UIView {
     @IBOutlet weak var shotButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var flipButton: UIButton!
+    @IBOutlet weak var timerLabel: UILabel!
     
     weak var delegate: FSVideoCameraViewDelegate? = nil
     
@@ -49,6 +50,9 @@ final class FSVideoCameraView: UIView {
         }
         
         self.backgroundColor = UIColor.hex("#FFFFFF", alpha: 1.0)
+        
+        self.timerLabel.textColor = UIColor.white
+        self.timerLabel.isHidden = true
         
         self.isHidden = false
         
@@ -209,11 +213,13 @@ final class FSVideoCameraView: UIView {
             }
             self.flipButton.isEnabled = false
             self.flashButton.isEnabled = false
+            self.timerLabel.isHidden = false
             videoOutput.startRecording(toOutputFileURL: outputURL, recordingDelegate: self)
         } else {
             videoOutput.stopRecording()
             self.flipButton.isEnabled = true
             self.flashButton.isEnabled = true
+            self.timerLabel.isHidden = true
         }
         return
     }
@@ -303,15 +309,19 @@ final class FSVideoCameraView: UIView {
     
 }
 
+
 extension FSVideoCameraView: AVCaptureFileOutputRecordingDelegate {
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
         print("started recording to: \(fileURL)")
+        self.startTimer()
     }
     
     func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         print("finished recording to: \(outputFileURL)")
+
         self.delegate?.videoFinished(withFileURL: outputFileURL)
+        self.stopTimer()
     }
     
 }
