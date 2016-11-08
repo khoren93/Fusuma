@@ -34,6 +34,8 @@ final class FSVideoCameraView: UIView {
     var videoStartImage: UIImage?
     var videoStopImage: UIImage?
     
+    var timer: Timer?
+    var timerSeconds: NSInteger = -1
     
     fileprivate var isRecording = false
     
@@ -307,6 +309,23 @@ final class FSVideoCameraView: UIView {
         
     }
     
+    func startTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerTick), userInfo: nil, repeats: true)
+        self.timer?.fire()
+    }
+    
+    func stopTimer() {
+        
+        self.timer?.invalidate()
+    }
+    
+    func timerTick() {
+        
+        self.timerSeconds += 1
+        self.timerLabel.text = self.timerSeconds.description
+        
+    }
 }
 
 
