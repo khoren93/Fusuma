@@ -13,9 +13,20 @@ import Photos
     
     func albumViewCameraRollUnauthorized()
     func albumViewCameraRollDidSelectImage()
+    func albumvViewAllowAccessDidOpenSettings()
 }
 
-final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, PHPhotoLibraryChangeObserver, UIGestureRecognizerDelegate {
+final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, PHPhotoLibraryChangeObserver, UIGestureRecognizerDelegate, FSAllowAccessViewDelegate {
+    
+    public var allowAccessTitle: String?
+    public var allowAccessDescription: String?
+    public var allowAccessButtonTitle: String?
+    public var allowAccessTitleFont: UIFont?
+    public var allowAccessDescFont: UIFont?
+    public var allowAccessButtonTitleFont: UIFont?
+    public var allowAccessTitleColor: UIColor?
+    public var allowAccessDescColor: UIColor?
+    public var allowAccessButtonTitleColor: UIColor?
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imageCropView: FSImageCropView!
@@ -23,6 +34,9 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
     
     @IBOutlet weak var collectionViewConstraintHeight: NSLayoutConstraint!
     @IBOutlet weak var imageCropViewConstraintTop: NSLayoutConstraint!
+    
+    @IBOutlet weak var allowAccessViewContainer: UIView!
+    lazy var allowAccessView = FSAllowAccessView.instance()
     
     weak var delegate: FSAlbumViewDelegate? = nil
     
@@ -59,8 +73,17 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
             
             return
         }
-		
-		self.isHidden = false
+        
+        allowAccessViewContainer.addSubview(allowAccessView)
+        
+        allowAccessView.frame  = CGRect(origin: CGPoint.zero, size: allowAccessViewContainer.frame.size)
+        allowAccessView.layoutIfNeeded()
+        allowAccessView.initialize()
+        allowAccessView.delegate = self
+        
+        initializeAllowAccesViewForAlbumView()
+        allowAccessViewContainer.isHidden = true
+        self.isHidden = false
         
         let panGesture      = UIPanGestureRecognizer(target: self, action: #selector(FSAlbumView.panned(_:)))
         panGesture.delegate = self
@@ -107,6 +130,30 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
             PHPhotoLibrary.shared().unregisterChangeObserver(self)
         }
     }
+    
+    public func allowAccessDidOpenSettings() {
+        
+        delegate?.albumvViewAllowAccessDidOpenSettings()
+    }
+    
+    public func initializeAllowAccesViewForAlbumView() {
+        
+        
+        
+        allowAccessView.allowAccessButton.titleLabel?.font = allowAccessButtonTitleFont
+        allowAccessView.allowAccessButton.setTitle(allowAccessButtonTitle, for: .normal)
+        allowAccessView.allowAccessButton.setTitleColor(allowAccessButtonTitleColor, for: .normal)
+        
+        allowAccessView.allowAccessTitleLabel.text = allowAccessTitle
+        allowAccessView.allowAccessTitleLabel.textColor = allowAccessTitleColor
+        allowAccessView.allowAccessTitleLabel.font = allowAccessTitleFont
+        
+        allowAccessView.allowAccessTextLabel.text = allowAccessDescription
+        allowAccessView.allowAccessTextLabel.textColor = allowAccessDescColor
+        allowAccessView.allowAccessTextLabel.font = allowAccessDescFont
+        
+    }
+
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         
@@ -400,6 +447,7 @@ private extension FSAlbumView {
         PHPhotoLibrary.requestAuthorization { (status) -> Void in
             switch status {
             case .authorized:
+                self.allowAccessViewContainer.isHidden = true
                 self.imageManager = PHCachingImageManager()
                 if self.images != nil && self.images.count > 0 {
                     
@@ -412,6 +460,7 @@ private extension FSAlbumView {
                     self.delegate?.albumViewCameraRollUnauthorized()
                     
                 })
+                self.allowAccessViewContainer.isHidden = false
             default:
                 break
             }

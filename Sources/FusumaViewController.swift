@@ -34,7 +34,7 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     @objc optional func fusumaDismissedWithImage(_ image: UIImage)
     func fusumaVideoCompleted(withFileURL fileURL: URL)
     func fusumaCameraRollUnauthorized()
-    
+    func fusumaAllowAccessDidOpensettings()
     @objc optional func fusumaClosed()
     
     func fusumaCameraRollDidSelectImage()
@@ -389,9 +389,20 @@ extension FusumaViewController: FSAlbumViewDelegate, FSCameraViewDelegate, FSVid
         delegate?.fusumaCameraRollDidSelectImage()
     }
     
+    public func albumvViewAllowAccessDidOpenSettings() {
+        delegate?.fusumaAllowAccessDidOpensettings()
+    }
+    
     func videoFinished(withFileURL fileURL: URL) {
         delegate?.fusumaVideoCompleted(withFileURL: fileURL)
         //        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func videoViewAllowAccessDidOpenSettings() {
+        delegate?.fusumaAllowAccessDidOpensettings()
+    }
+    func cameraViewAllowAccessDidOpenSettings() {
+        delegate?.fusumaAllowAccessDidOpensettings()
     }
     
 }
@@ -546,5 +557,112 @@ public extension FusumaViewController {
     public func setMode(mode: Mode) {
         changeMode(mode)
     }
+    
+    public func initializeAllowAccesViewForLibrary(titleText: String, descriptionText: String, buttonTitle: String,
+                                  titleFont: UIFont?, descFont: UIFont?, buttonTitleFont: UIFont?,
+                                  titleColor: UIColor, descColor: UIColor, buttonTitleColor: UIColor)
+    {
+        
+        albumView.allowAccessButtonTitle = buttonTitle
+        albumView.allowAccessButtonTitleColor = buttonTitleColor
+        albumView.allowAccessButtonTitleFont = buttonTitleFont
+        
+        albumView.allowAccessDescFont = descFont
+        albumView.allowAccessDescription = descriptionText
+        albumView.allowAccessDescColor = descColor
+        
+        albumView.allowAccessTitle = titleText
+        albumView.allowAccessTitleFont = titleFont
+        albumView.allowAccessTitleColor = titleColor
+        
+    }
+    
+    public func initializeAllowAccesViewForCamera(titleText: String, descriptionText: String, buttonTitle: String,
+                                                   titleFont: UIFont?, descFont: UIFont?, buttonTitleFont: UIFont?,
+                                                   titleColor: UIColor, descColor: UIColor, buttonTitleColor: UIColor)
+    {
+        
+        cameraView.allowAccessButtonTitle = buttonTitle
+        cameraView.allowAccessButtonTitleColor = buttonTitleColor
+        cameraView.allowAccessButtonTitleFont = buttonTitleFont
+        
+        cameraView.allowAccessDescFont = descFont
+        cameraView.allowAccessDescription = descriptionText
+        cameraView.allowAccessDescColor = descColor
+        
+        cameraView.allowAccessTitle = titleText
+        cameraView.allowAccessTitleFont = titleFont
+        cameraView.allowAccessTitleColor = titleColor
+        
+    }
+    
+    public func initializeAllowAccesViewForVideView(titleText: String, descriptionText: String, buttonTitle: String,
+                                                  titleFont: UIFont?, descFont: UIFont?, buttonTitleFont: UIFont?,
+                                                  titleColor: UIColor, descColor: UIColor, buttonTitleColor: UIColor)
+    {
+        
+        videoView.allowAccessButtonTitle = buttonTitle
+        videoView.allowAccessButtonTitleColor = buttonTitleColor
+        videoView.allowAccessButtonTitleFont = buttonTitleFont
+        
+        videoView.allowAccessDescFont = descFont
+        videoView.allowAccessDescription = descriptionText
+        videoView.allowAccessDescColor = descColor
+        
+        videoView.allowAccessTitle = titleText
+        videoView.allowAccessTitleFont = titleFont
+        videoView.allowAccessTitleColor = titleColor
+        
+    }
+}
+
+public protocol FSAllowAccessViewDelegate: class {
+    
+    func allowAccessDidOpenSettings()
+}
+
+@objc public class FSAllowAccessView: UIView {
+    
+    @IBOutlet weak var allowAccessBackgroundView: UIView!
+    @IBOutlet weak var allowAccessTitleLabel: UILabel!
+    @IBOutlet weak var allowAccessTextLabel: UILabel!
+    @IBOutlet weak var allowAccessButton: UIButton!
+    
+    weak var delegate: FSAllowAccessViewDelegate? = nil
+    
+    static func instance() -> FSAllowAccessView {
+        return UINib(nibName: "FSAllowAccessView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! FSAllowAccessView
+    }
+
+    
+    func initialize() {
+        
+        allowAccessTitleLabel.numberOfLines = 0
+        allowAccessTextLabel.numberOfLines = 0
+        allowAccessTextLabel.textAlignment = .center
+        allowAccessTitleLabel.textAlignment = .center
+        
+        allowAccessButton.layer.masksToBounds = true
+        allowAccessButton.layer.cornerRadius = 20
+        allowAccessButton.backgroundColor = UIColor.hex("#47d081", alpha: 1)
+        allowAccessButton.setTitleColor(.white, for: .normal)
+        allowAccessButton.contentEdgeInsets.left = 16
+        allowAccessButton.contentEdgeInsets.right = 16
+    }
+    
+
+    @IBAction func allowAccessAction(_ sender: UIButton) {
+        
+        delegate?.allowAccessDidOpenSettings()
+    }
+    
+    /*
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
 }
 

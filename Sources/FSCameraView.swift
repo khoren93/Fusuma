@@ -11,9 +11,10 @@ import AVFoundation
 
 @objc protocol FSCameraViewDelegate: class {
     func cameraShotFinished(_ image: UIImage)
+    func cameraViewAllowAccessDidOpenSettings()
 }
 
-final class FSCameraView: UIView, UIGestureRecognizerDelegate {
+final class FSCameraView: UIView, UIGestureRecognizerDelegate, FSAllowAccessViewDelegate {
 
     @IBOutlet weak var previewViewContainer: UIView!
     @IBOutlet weak var shotButton: UIButton!
@@ -21,6 +22,18 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
     @IBOutlet weak var flipButton: UIButton!
     @IBOutlet weak var croppedAspectRatioConstraint: NSLayoutConstraint!
     @IBOutlet weak var fullAspectRatioConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var allowAccessViewContainer: UIView!
+    lazy var allowAccessView = FSAllowAccessView.instance()
+    public var allowAccessTitle: String?
+    public var allowAccessDescription: String?
+    public var allowAccessButtonTitle: String?
+    public var allowAccessTitleFont: UIFont?
+    public var allowAccessDescFont: UIFont?
+    public var allowAccessButtonTitleFont: UIFont?
+    public var allowAccessTitleColor: UIColor?
+    public var allowAccessDescColor: UIColor?
+    public var allowAccessButtonTitleColor: UIColor?
     
     weak var delegate: FSCameraViewDelegate? = nil
     
@@ -44,6 +57,14 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
             
             return
         }
+        
+        allowAccessViewContainer.addSubview(allowAccessView)
+        allowAccessViewContainer.isHidden = true
+        allowAccessView.frame  = CGRect(origin: CGPoint.zero, size: allowAccessViewContainer.frame.size)
+        allowAccessView.layoutIfNeeded()
+        allowAccessView.initialize()
+        allowAccessView.delegate = self
+        initializeAllowAccesViewForCameraView()
         
         self.backgroundColor = UIColor.hex("#FFFFFF", alpha: 1.0)
         
@@ -133,10 +154,12 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
         
         if status == AVAuthorizationStatus.authorized {
             
+            allowAccessViewContainer.isHidden = true
             session?.startRunning()
             
         } else if status == AVAuthorizationStatus.denied || status == AVAuthorizationStatus.restricted {
             
+            allowAccessViewContainer.isHidden = false
             session?.stopRunning()
         }
     }
@@ -146,16 +169,39 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
+    public func initializeAllowAccesViewForCameraView() {
+        
+        allowAccessView.allowAccessButton.titleLabel?.font = allowAccessButtonTitleFont
+        allowAccessView.allowAccessButton.setTitle(allowAccessButtonTitle, for: .normal)
+        allowAccessView.allowAccessButton.setTitleColor(allowAccessButtonTitleColor, for: .normal)
+        
+        allowAccessView.allowAccessTitleLabel.text = allowAccessTitle
+        allowAccessView.allowAccessTitleLabel.textColor = allowAccessTitleColor
+        allowAccessView.allowAccessTitleLabel.font = allowAccessTitleFont
+        
+        allowAccessView.allowAccessTextLabel.text = allowAccessDescription
+        allowAccessView.allowAccessTextLabel.textColor = allowAccessDescColor
+        allowAccessView.allowAccessTextLabel.font = allowAccessDescFont
+        
+    }
+
+    public func allowAccessDidOpenSettings() {
+        
+        delegate?.cameraViewAllowAccessDidOpenSettings()
+    }
+    
     func startCamera() {
         
         let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
         
         if status == AVAuthorizationStatus.authorized {
 
+            allowAccessViewContainer.isHidden = true
             session?.startRunning()
             
         } else if status == AVAuthorizationStatus.denied || status == AVAuthorizationStatus.restricted {
 
+            allowAccessViewContainer.isHidden = false
             session?.stopRunning()
         }
     }

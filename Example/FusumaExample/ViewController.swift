@@ -88,6 +88,10 @@ class ViewController: UIViewController, FusumaDelegate {
      
         print("Called when the close button is pressed")
     }
+    
+    func fusumaAllowAccessDidOpensettings() {
+        print("Open Settinga")
+    }
 
 }
 

@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ8-Sp-jjd">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="SZ8-Sp-jjd" secondAttribute="height" multiplier="3:4" priority="750" id="50d-Ra-Hof"/>
@@ -21,8 +25,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUi-qP-Neb">
+                    <rect key="frame" x="0.0" y="500" width="400" height="100"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8l-Ld-Oon">
+                            <rect key="frame" x="166" y="16" width="68" height="68"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="68" id="hsf-ex-pEE"/>
                                 <constraint firstAttribute="width" constant="68" id="rPk-4D-nfg"/>
@@ -34,6 +40,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cf2-eo-TZZ">
+                            <rect key="frame" x="48" y="30" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="Wbh-0c-uHY"/>
                                 <constraint firstAttribute="height" constant="40" id="m8M-Pd-ZIT"/>
@@ -45,6 +52,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De1-Cg-kBb">
+                            <rect key="frame" x="312" y="30" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="g0F-ZH-8j6"/>
                                 <constraint firstAttribute="height" constant="40" id="kNB-bN-eie"/>
@@ -67,20 +75,29 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="sGm-NU-u2R"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQr-IL-w9s">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="oUi-qP-Neb" secondAttribute="bottom" id="7zn-vY-NCd"/>
                 <constraint firstAttribute="trailing" secondItem="oUi-qP-Neb" secondAttribute="trailing" id="HM7-dt-RPz"/>
                 <constraint firstItem="oUi-qP-Neb" firstAttribute="top" secondItem="SZ8-Sp-jjd" secondAttribute="bottom" id="KEj-9P-kyb"/>
+                <constraint firstItem="RQr-IL-w9s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KzV-5b-uRC"/>
                 <constraint firstItem="oUi-qP-Neb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Lpo-QC-qmm"/>
                 <constraint firstItem="SZ8-Sp-jjd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XnG-nk-Wcr"/>
                 <constraint firstAttribute="trailing" secondItem="SZ8-Sp-jjd" secondAttribute="trailing" id="bms-F5-8H5"/>
+                <constraint firstItem="RQr-IL-w9s" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mZY-Wb-6UY"/>
+                <constraint firstItem="RQr-IL-w9s" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vTC-LZ-ZLb"/>
                 <constraint firstItem="SZ8-Sp-jjd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="x7t-wb-WiH"/>
+                <constraint firstItem="RQr-IL-w9s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xNZ-Ub-T8P"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="allowAccessViewContainer" destination="RQr-IL-w9s" id="nqc-2h-rq0"/>
                 <outlet property="croppedAspectRatioConstraint" destination="dsr-FI-2Hq" id="dCb-jy-WZQ"/>
                 <outlet property="flashButton" destination="De1-Cg-kBb" id="vgA-Pn-IaF"/>
                 <outlet property="flipButton" destination="cf2-eo-TZZ" id="m0O-6p-tPs"/>

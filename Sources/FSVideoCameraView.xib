@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,14 +17,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hK-pW-0DW">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0hK-pW-0DW" secondAttribute="height" multiplier="1:1" id="EYm-IN-2Mh"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gh-EB-weA">
+                    <rect key="frame" x="0.0" y="400" width="400" height="200"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPV-fC-75T">
+                            <rect key="frame" x="48" y="80" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="GcK-Ga-JH3"/>
                                 <constraint firstAttribute="height" constant="40" id="TcK-3W-Kpf"/>
@@ -33,6 +39,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-ro-bt6">
+                            <rect key="frame" x="165" y="65" width="70" height="70"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="BsM-o7-FiY"/>
                                 <constraint firstAttribute="width" constant="70" id="ggw-fN-Nue"/>
@@ -44,6 +51,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHq-QZ-jPz">
+                            <rect key="frame" x="312" y="80" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="40" id="C6F-2l-AWm"/>
                                 <constraint firstAttribute="height" constant="40" id="OR0-eQ-5pN"/>
@@ -55,6 +63,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnL-8F-y2I">
+                            <rect key="frame" x="200" y="100" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -72,19 +81,28 @@
                         <constraint firstAttribute="trailing" secondItem="yHq-QZ-jPz" secondAttribute="trailing" constant="48" id="x4Y-A2-snd"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HnI-Rx-1tR">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="HnI-Rx-1tR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2Yf-oK-5Hz"/>
+                <constraint firstItem="HnI-Rx-1tR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5U4-LH-RgL"/>
                 <constraint firstItem="6gh-EB-weA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8DC-7U-0Ht"/>
                 <constraint firstAttribute="bottom" secondItem="6gh-EB-weA" secondAttribute="bottom" id="IOQ-4M-Rye"/>
                 <constraint firstAttribute="trailing" secondItem="6gh-EB-weA" secondAttribute="trailing" id="Lge-9D-s38"/>
+                <constraint firstItem="HnI-Rx-1tR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tfd-rw-ccY"/>
                 <constraint firstItem="0hK-pW-0DW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZtF-xP-XL4"/>
+                <constraint firstItem="HnI-Rx-1tR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b0i-la-fjn"/>
                 <constraint firstItem="0hK-pW-0DW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="snf-T0-XlH"/>
                 <constraint firstAttribute="trailing" secondItem="0hK-pW-0DW" secondAttribute="trailing" id="syg-FP-hcI"/>
                 <constraint firstItem="6gh-EB-weA" firstAttribute="top" secondItem="0hK-pW-0DW" secondAttribute="bottom" id="t3B-Bo-8p1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="allowAccessViewContainer" destination="HnI-Rx-1tR" id="Hpu-oq-egh"/>
                 <outlet property="flashButton" destination="yHq-QZ-jPz" id="umV-Ve-W2b"/>
                 <outlet property="flipButton" destination="oPV-fC-75T" id="J96-fz-NnG"/>
                 <outlet property="previewViewContainer" destination="0hK-pW-0DW" id="8bh-3S-jSb"/>
@@ -97,6 +115,6 @@
     <resources>
         <image name="ic_flash_off" width="16" height="20"/>
         <image name="ic_loop" width="19" height="19"/>
-        <image name="video_button" width="70" height="70"/>
+        <image name="video_button" width="72" height="72"/>
     </resources>
 </document>

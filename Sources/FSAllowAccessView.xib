@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FSAllowAccessView" customModule="Fusuma" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FSAllowAccessView" customModule="Fusuma" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-WE-ZGO">
+                    <rect key="frame" x="0.0" y="260.5" width="375" height="146"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcc-ML-0ln">
+                            <rect key="frame" x="32" y="0.0" width="311" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBm-0b-XQZ">
+                            <rect key="frame" x="32" y="53" width="311" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8A2-vj-PO9">
+                            <rect key="frame" x="164" y="106" width="46" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="fLs-nX-GWy"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="allowAccessAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="vLE-La-ytl"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="YBm-0b-XQZ" firstAttribute="leading" secondItem="wcc-ML-0ln" secondAttribute="leading" id="41P-5w-YGf"/>
+                        <constraint firstItem="YBm-0b-XQZ" firstAttribute="top" secondItem="wcc-ML-0ln" secondAttribute="bottom" constant="32" id="JwN-Ax-Bfi"/>
+                        <constraint firstItem="8A2-vj-PO9" firstAttribute="centerX" secondItem="yGM-WE-ZGO" secondAttribute="centerX" id="MN1-hv-frL"/>
+                        <constraint firstItem="YBm-0b-XQZ" firstAttribute="trailing" secondItem="wcc-ML-0ln" secondAttribute="trailing" id="N9g-Xe-FE8"/>
+                        <constraint firstItem="8A2-vj-PO9" firstAttribute="top" secondItem="YBm-0b-XQZ" secondAttribute="bottom" constant="32" id="QxQ-Hu-e6k"/>
+                        <constraint firstItem="wcc-ML-0ln" firstAttribute="leading" secondItem="yGM-WE-ZGO" secondAttribute="leading" constant="32" id="cip-VK-QNL"/>
+                        <constraint firstItem="wcc-ML-0ln" firstAttribute="centerX" secondItem="yGM-WE-ZGO" secondAttribute="centerX" id="kht-ux-XU7"/>
+                        <constraint firstItem="wcc-ML-0ln" firstAttribute="top" secondItem="yGM-WE-ZGO" secondAttribute="top" id="sht-SI-RM3"/>
+                        <constraint firstAttribute="bottom" secondItem="8A2-vj-PO9" secondAttribute="bottom" id="zw4-Sc-lq8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yGM-WE-ZGO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BhE-hj-8i3"/>
+                <constraint firstItem="yGM-WE-ZGO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ht7-MB-SHZ"/>
+                <constraint firstItem="yGM-WE-ZGO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mNa-5g-TZ9"/>
+            </constraints>
+            <connections>
+                <outlet property="allowAccessBackgroundView" destination="yGM-WE-ZGO" id="YIw-Fc-W4u"/>
+                <outlet property="allowAccessButton" destination="8A2-vj-PO9" id="Ow2-y0-T8b"/>
+                <outlet property="allowAccessTextLabel" destination="YBm-0b-XQZ" id="WkF-r3-rCg"/>
+                <outlet property="allowAccessTitleLabel" destination="wcc-ML-0ln" id="QIx-sq-PjI"/>
+            </connections>
+        </view>
+    </objects>
+</document>
