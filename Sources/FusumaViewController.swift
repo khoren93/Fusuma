@@ -596,7 +596,7 @@ public extension FusumaViewController {
         
     }
     
-    public func initializeAllowAccesViewForVideView(titleText: String, descriptionText: String, buttonTitle: String,
+    public func initializeAllowAccesViewForVideoView(titleText: String, descriptionText: String, buttonTitle: String,
                                                   titleFont: UIFont?, descFont: UIFont?, buttonTitleFont: UIFont?,
                                                   titleColor: UIColor, descColor: UIColor, buttonTitleColor: UIColor)
     {
@@ -631,7 +631,7 @@ public protocol FSAllowAccessViewDelegate: class {
     weak var delegate: FSAllowAccessViewDelegate? = nil
     
     static func instance() -> FSAllowAccessView {
-        return UINib(nibName: "FSAllowAccessView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! FSAllowAccessView
+        return UINib(nibName: "FSAllowAccessView", bundle: Bundle(for: self.classForCoder())).instantiate(withOwner: self, options: nil)[0] as! FSAllowAccessView
     }
 
     

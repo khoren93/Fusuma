@@ -36,6 +36,35 @@ class ViewController: UIViewController, FusumaDelegate {
         
         fusuma.delegate = self
         self.present(fusuma, animated: true, completion: nil)
+        
+       /* fusuma.initializeAllowAccesViewForLibrary(titleText: "Please Allow Access to Your Photos",
+                                                 descriptionText: "This allows you to upload greeting or gratitude images.",
+                                                 buttonTitle: "Enable Access",
+                                                 titleFont: nil,
+                                                 descFont: nil,
+                                                 buttonTitleFont: nil,
+                                                 titleColor: UIColor.black,
+                                                 descColor: UIColor.black,
+                                                 buttonTitleColor: UIColor.black)
+        
+        fusuma.initializeAllowAccesViewForCamera(titleText: "Take Photos And Videos With GiftsApp",
+                                                 descriptionText: "Allow access to your camera and microphone to start creating greeting or gratitude photos or videos.",
+                                                 buttonTitle: "Enable Access",
+                                                 titleFont: nil,
+                                                 descFont: nil,
+                                                 buttonTitleFont: nil,
+                                                 titleColor: UIColor.black,
+                                                 descColor: UIColor.black,
+                                                 buttonTitleColor: UIColor.black)
+        fusuma.initializeAllowAccesViewForVideoView(titleText: "Take Photos And Videos With GiftsApp",
+                                                 descriptionText: "Allow access to your camera and microphone to start creating greeting or gratitude photos or videos.",
+                                                 buttonTitle: "Enable Access",
+                                                 titleFont: nil,
+                                                 descFont: nil,
+                                                 buttonTitleFont: nil,
+                                                 titleColor: UIColor.black,
+                                                 descColor: UIColor.black,
+                                                 buttonTitleColor: UIColor.black) */
     }
     
     // MARK: FusumaDelegate Protocol
