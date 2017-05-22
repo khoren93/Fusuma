@@ -123,7 +123,7 @@ final class FSVideoCameraView: UIView, FSAllowAccessViewDelegate {
 
                 for device in AVCaptureDevice.devices(withMediaType: AVMediaTypeAudio) {
                     let device = device as? AVCaptureDevice
-                    let audioInput = try! AVCaptureDeviceInput(device: device)
+                    let audioInput = try AVCaptureDeviceInput(device: device)
                     session.addInput(audioInput)
                 }
 
@@ -143,7 +143,7 @@ final class FSVideoCameraView: UIView, FSAllowAccessViewDelegate {
             self.previewViewContainer.addGestureRecognizer(tapRecognizer)
             
         } catch {
-            
+            self.allowAccessViewContainer.isHidden = false
         }
         
         
@@ -202,14 +202,17 @@ final class FSVideoCameraView: UIView, FSAllowAccessViewDelegate {
     }
     func startCamera() {
         
-        let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let statusForVideo = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let statusForMicrophone = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeAudio)
         
-        if status == AVAuthorizationStatus.authorized {
-            
+        if statusForVideo == AVAuthorizationStatus.authorized && statusForMicrophone == AVAuthorizationStatus.authorized {
+
             self.allowAccessViewContainer.isHidden = true
             session?.startRunning()
             
-        } else if status == AVAuthorizationStatus.denied || status == AVAuthorizationStatus.restricted {
+        } else if (statusForVideo == AVAuthorizationStatus.denied || statusForVideo == AVAuthorizationStatus.restricted) &&
+                    (statusForMicrophone == AVAuthorizationStatus.denied || statusForMicrophone == AVAuthorizationStatus.restricted) {
+            
             self.allowAccessViewContainer.isHidden = false
             session?.stopRunning()
         }
