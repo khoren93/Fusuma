@@ -243,6 +243,8 @@ public final class FusumaViewController: UIViewController {
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        requestAuthorization(forMediaType: AVMediaTypeVideo)
+        requestAuthorization(forMediaType: AVMediaTypeAudio)
         
     }
     
@@ -614,6 +616,44 @@ public extension FusumaViewController {
         videoView.allowAccessTitleColor = titleColor
         
     }
+
+    /// Requests authorization permission.
+    ///
+    /// - Parameter mediaType: Specified media type (i.e. AVMediaTypeVideo, AVMediaTypeAudio, etc.)
+    public func requestAuthorization(forMediaType mediaType: String) {
+        
+        AVCaptureDevice.requestAccess(forMediaType: mediaType) { [unowned self] (granted: Bool) in
+            
+            DispatchQueue.main.async(execute: { () -> Void in
+                
+                switch mediaType {
+                case AVMediaTypeVideo:
+                    if granted {
+                        
+                        self.cameraView.allowAccessViewContainer.isHidden = true
+                        self.videoView.allowAccessViewContainer.isHidden = true
+                    } else {
+                        
+                        self.cameraView.allowAccessViewContainer.isHidden = false
+                        self.videoView.allowAccessViewContainer.isHidden = false
+                    }
+                    
+                case AVMediaTypeAudio:
+                    if granted {
+                        self.videoView.allowAccessViewContainer.isHidden = true
+                    } else {
+                        
+                        self.videoView.allowAccessViewContainer.isHidden = false
+                    }
+
+                default:
+                    break
+                }
+               
+                
+            })
+        }
+    }
 }
 
 public protocol FSAllowAccessViewDelegate: class {
@@ -665,4 +705,3 @@ public protocol FSAllowAccessViewDelegate: class {
      */
     
 }
-

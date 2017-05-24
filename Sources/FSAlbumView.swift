@@ -456,11 +456,10 @@ private extension FSAlbumView {
                 
             case .restricted, .denied:
                 DispatchQueue.main.async(execute: { () -> Void in
-                    
+                    self.allowAccessViewContainer.isHidden = false
                     self.delegate?.albumViewCameraRollUnauthorized()
                     
                 })
-                self.allowAccessViewContainer.isHidden = false
             default:
                 break
             }

@@ -207,13 +207,13 @@ final class FSVideoCameraView: UIView, FSAllowAccessViewDelegate {
         
         if statusForVideo == AVAuthorizationStatus.authorized && statusForMicrophone == AVAuthorizationStatus.authorized {
 
-            self.allowAccessViewContainer.isHidden = true
+            //self.allowAccessViewContainer.isHidden = true
             session?.startRunning()
             
         } else if (statusForVideo == AVAuthorizationStatus.denied || statusForVideo == AVAuthorizationStatus.restricted) &&
-                    (statusForMicrophone == AVAuthorizationStatus.denied || statusForMicrophone == AVAuthorizationStatus.restricted) {
-            
-            self.allowAccessViewContainer.isHidden = false
+            (statusForMicrophone == AVAuthorizationStatus.denied || statusForMicrophone == AVAuthorizationStatus.restricted)
+            {
+            //self.allowAccessViewContainer.isHidden = false
             session?.stopRunning()
         }
     }

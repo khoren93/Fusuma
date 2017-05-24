@@ -154,12 +154,12 @@ final class FSCameraView: UIView, UIGestureRecognizerDelegate, FSAllowAccessView
         
         if status == AVAuthorizationStatus.authorized {
             
-            allowAccessViewContainer.isHidden = true
+            //allowAccessViewContainer.isHidden = true
             session?.startRunning()
             
         } else if status == AVAuthorizationStatus.denied || status == AVAuthorizationStatus.restricted {
             
-            allowAccessViewContainer.isHidden = false
+            //allowAccessViewContainer.isHidden = false
             session?.stopRunning()
         }
     }
