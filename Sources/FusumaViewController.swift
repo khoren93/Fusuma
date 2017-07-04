@@ -318,7 +318,7 @@ public final class FusumaViewController: UIViewController {
         let image : UIImage? = view?.image
         
         if image == nil {
-            delegate?.fusumaImageSelected(image: image!)
+            delegate?.fusumaImageSelected(image: nil)
             return;
         }
         
