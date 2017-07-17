@@ -359,7 +359,7 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
                 
                 let collectionView = self.collectionView!
                 
-                if !collectionChanges!.hasIncrementalChanges || collectionChanges!.hasMoves {
+                /*if !collectionChanges!.hasIncrementalChanges || collectionChanges!.hasMoves {
                     
                     collectionView.reloadData()
                     
@@ -379,8 +379,9 @@ final class FSAlbumView: UIView, UICollectionViewDataSource, UICollectionViewDel
                             collectionView.reloadItems(at: changedIndexes!.aapl_indexPathsFromIndexesWithSection(0))
                         }
                         }, completion: nil)
-                }
+                } */
                 
+                collectionView.reloadData()
                 self.resetCachedAssets()
             }
         }
